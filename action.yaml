@@ -9,7 +9,7 @@ inputs:
   cli_version:
     description: |
       Tekton CLI release version
-    default: v0.29.1
+    default: latest
     required: false
 runs:
   using: composite
@@ -22,4 +22,4 @@ runs:
     - shell: bash
       env:
         INPUT_CLI_VERSION: ${{ inputs.cli_version }}
-      run: ${{ github.action_path }}/install-cli.sh
+      run: sudo --preserve-env ${{ github.action_path }}/install-cli.sh

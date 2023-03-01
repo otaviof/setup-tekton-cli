@@ -23,5 +23,8 @@ else
 	url=$(get_release_artifact_url ${org_repo} ${INPUT_CLI_VERSION})
 fi
 
+[[ -z "${url}" ]] &&
+	fail "Unable to acrquire the release artifact download URL"
+
 phase "Download URL '${url}'"
 download_and_install ${url} "tkn"
