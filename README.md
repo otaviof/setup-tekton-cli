@@ -13,10 +13,11 @@ jobs:
   setup-tekton-cli:
     steps:
       - uses: otaviof/setup-tekton-cli@main
-          cli_version: latest
+        with:
+          version: latest
 ```
 
-By default the action is set to install `latest` release, to install a specific version use the input `cli_version`.
+By default the action is set to install `latest` release, for a specific version use the `version` input.
 
 [githubTektonCLI]: https://github.com/tektoncd/cli
 [useActionWorkflowBadge]: https://github.com/otaviof/setup-tekton-cli/actions/workflows/use-action.yaml/badge.svg

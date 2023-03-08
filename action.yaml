@@ -6,7 +6,7 @@ branding:
   color: blue
   icon: anchor
 inputs:
-  cli_version:
+  version:
     description: |
       Tekton CLI release version
     default: latest
@@ -21,5 +21,5 @@ runs:
     # installs the pre-compiled Tekton CLI
     - shell: bash
       env:
-        INPUT_CLI_VERSION: ${{ inputs.cli_version }}
+        INPUT_VERSION: ${{ inputs.version }}
       run: sudo --preserve-env ${{ github.action_path }}/install-cli.sh
